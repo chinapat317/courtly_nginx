@@ -6,14 +6,12 @@ services:
       - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-      - ../cert:/etc/nginx/certs/nginx:ro
-      - ../../certs/ca:/etc/nginx/certs/ca:ro
+      - ./cert:/etc/nginx/certs/nginx:ro
+      - ../../ca/cert:/etc/nginx/certs/ca:ro
       # only if using mTLS from nginx to authentik:
       # - ./certs/nginx-client:/etc/nginx/certs/nginx-client:ro
     networks:
       authentik:
-        aliases:
-          - auth.lab069.kasetsart.university
 
 networks:
   authentik:
