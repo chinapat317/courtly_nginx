@@ -12,8 +12,6 @@ services:
       # - ./certs/nginx-client:/etc/nginx/certs/nginx-client:ro
     networks:
       authentik:
-        aliases: 
-          - auth-server
 
 networks:
   authentik:
